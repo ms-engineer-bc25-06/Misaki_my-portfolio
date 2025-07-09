@@ -10,10 +10,11 @@ const serviceAccountPath = path.resolve(
 );
 const serviceAccount = JSON.parse(readFileSync(serviceAccountPath, "utf8"));
 
+//Firebase Admin SDK を初期化
 if (!admin.apps.length) {
   admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
   });
 }
-
+//認証モジュール（auth）をエクスポート
 export const adminAuth = admin.auth();

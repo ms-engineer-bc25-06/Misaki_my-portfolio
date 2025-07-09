@@ -16,5 +16,6 @@ const firebaseConfig = {
 const app = getApps().length > 0 ? getApp() : initializeApp(firebaseConfig);
 
 // 使用する機能を export
+export { app };
 export const auth = getAuth(app);
 export const db = getFirestore(app);
