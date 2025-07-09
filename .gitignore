@@ -35,3 +35,4 @@ temp/
 docker-compose.override.yml
 docker-compose.override.yaml
 
+backend/serviceAccountKey.json
