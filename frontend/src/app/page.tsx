@@ -36,30 +36,29 @@ export default function Home() {
       {/* プロフィール */}
       <section className="text-center mb-12">
         <Image
-          src="/illustration-girl.png" // public フォルダに配置したイラスト
+          src="/easy-peasy_pZ6yYdmjyL.png" // public フォルダに配置したイラスト
           alt="プロフィールイラスト"
           width={120}
           height={120}
           className="mx-auto rounded-full"
         />
-        <h1 className="text-3xl font-bold mt-4">沖野 美咲</h1>
-        <p className="text-gray-600">フルスタックエンジニア / Webデザイナー</p>
+        <h1 className="text-3xl font-bold mt-4">MISAKI OKINO</h1>
+        <p className="text-gray-600">フルスタックエンジニア </p>
       </section>
 
       {/* 実績 */}
-      <section className="mb-12">
+      <section className="mb-12 text-center">
         <h2 className="text-2xl font-semibold mb-4">実績</h2>
-        <ul className="list-disc list-inside space-y-2 text-gray-800">
+        <ul className="list-disc list-inside space-y-2 text-gray-800 inline-block text-left">
           <li>ポートフォリオサイトの開発（Next.js + Firebase）</li>
           <li>家計簿アプリ（React + Express + MySQL）</li>
-          <li>チーム開発でのフロントエンドリード経験</li>
         </ul>
       </section>
 
       {/* スキル */}
-      <section className="mb-12">
+      <section className="mb-12 text-center">
         <h2 className="text-2xl font-semibold mb-4">スキル</h2>
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 justify-center">
           {[
             "TypeScript",
             "React",
