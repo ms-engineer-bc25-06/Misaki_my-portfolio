@@ -4,6 +4,14 @@ import { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import { app } from "@/libs/firebase";
 import { notFound } from "next/navigation";
+import Link from "next/link";
+
+// 例：プロフィール編集へのリンク
+<Link href="/admin/profile">
+  <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+    編集ページへ
+  </button>
+</Link>;
 
 export default function AdminPage() {
   const [checked, setChecked] = useState(false);
@@ -41,6 +49,7 @@ export default function AdminPage() {
         <p className="text-gray-600 mb-2">
           自己紹介、アイコン画像などを編集できます。
         </p>
+        <Link href="/admin/profile"></Link>
         <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
           編集ページへ
         </button>
