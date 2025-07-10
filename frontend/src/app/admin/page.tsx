@@ -32,6 +32,42 @@ export default function AdminPage() {
   return (
     <main className="max-w-3xl mx-auto px-4 py-12">
       <h1 className="text-3xl font-bold mb-6">管理者専用ページ</h1>
+
+      {/* セクション：プロフィール */}
+      <section className="mb-12">
+        <h2 className="text-xl font-semibold mb-2 border-b pb-1">
+          プロフィール編集
+        </h2>
+        <p className="text-gray-600 mb-2">
+          自己紹介、アイコン画像などを編集できます。
+        </p>
+        <button className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+          編集ページへ
+        </button>
+      </section>
+
+      {/* セクション：実績 */}
+      <section className="mb-12">
+        <h2 className="text-xl font-semibold mb-2 border-b pb-1">実績管理</h2>
+        <p className="text-gray-600 mb-2">
+          実績の一覧、追加、編集、削除ができます。
+        </p>
+        <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">
+          実績管理ページへ
+        </button>
+      </section>
+
+      {/* セクション：スキル */}
+      <section className="mb-12">
+        <h2 className="text-xl font-semibold mb-2 border-b pb-1">スキル管理</h2>
+        <p className="text-gray-600 mb-2">
+          スキルの一覧、追加、編集ができます。
+        </p>
+        <button className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">
+          スキル管理ページへ
+        </button>
+      </section>
+
       <p>ここには管理者だけが見られる情報が表示されます。</p>
     </main>
   );
