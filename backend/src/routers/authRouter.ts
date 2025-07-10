@@ -1,4 +1,4 @@
-// backend/src/routers/authRouter.ts
+// backend/src/routers/authRouter.ts（基本情報取得）
 import express from "express";
 import { verifyFirebaseToken } from "../middleware/verifyFirebaseToken";
 import { DecodedIdToken } from "firebase-admin/auth";

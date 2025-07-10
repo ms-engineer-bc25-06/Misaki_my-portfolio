@@ -2,6 +2,7 @@
 import express from "express";
 import cors from "cors";
 import authRouter from "./routers/authRouter";
+import adminRouter from "./routers/adminRouter";
 
 const app = express();
 // フロントエンドの http://localhost:3000 を許可
@@ -15,5 +16,6 @@ app.use(
 app.use(express.json());
 
 app.use("/api/auth", authRouter); // ← ここで /me が /api/auth/me にマウントされる
+app.use("/api/admin", adminRouter);
 
 export default app;

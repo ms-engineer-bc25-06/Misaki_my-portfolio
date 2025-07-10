@@ -1,4 +1,4 @@
-// backend/src/middleware/verifyFirebaseToken.ts
+// backend/src/middleware/verifyFirebaseToken.ts（有効なトークンかどうか）
 import { Request, Response, NextFunction } from "express";
 import { adminAuth } from "../libs/firebaseAdmin";
 import { DecodedIdToken } from "firebase-admin/auth"; // ← 追加（型）

@@ -2,7 +2,7 @@
 import { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
 import { app } from "@/libs/firebase"; // あなたが作ったfirebase.tsの初期化ファイル
-import Image from "next/image";
+import Image from "next/image"; //画像
 
 export default function Home() {
   const [apiResult, setApiResult] = useState<{
