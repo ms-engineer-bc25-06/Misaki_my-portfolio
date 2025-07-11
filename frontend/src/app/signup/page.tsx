@@ -1,4 +1,4 @@
-// app/signup/page.tsx
+// app/signup/page.tsx 新規登録ページ
 "use client";
 
 import { useState } from "react";

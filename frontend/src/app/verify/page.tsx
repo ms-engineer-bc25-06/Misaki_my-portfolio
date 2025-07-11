@@ -1,4 +1,4 @@
-// app/verify/page.tsx
+// app/verify/page.tsx　Firebaseユーザーのメール認証状況の確認・再送処理を行う画面
 "use client";
 
 import { useEffect, useState } from "react";

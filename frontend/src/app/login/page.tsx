@@ -1,4 +1,4 @@
-// app/login/page.tsx
+// app/login/page.tsx ログインページ
 "use client";
 
 import { useState } from "react";
@@ -27,10 +27,15 @@ export default function LoginPage() {
         router.push("/verify");
         return;
       }
+      const idTokenResult = await userCredential.user.getIdTokenResult();
 
       setMessage("ログイン成功！");
       setTimeout(() => {
-        router.push("/");
+        if (idTokenResult.claims.admin) {
+          router.push("/admin");
+        } else {
+          router.push("/");
+        }
       }, 1500);
       router.push("/"); // ログイン後にトップページへ遷移
     } catch (error: unknown) {

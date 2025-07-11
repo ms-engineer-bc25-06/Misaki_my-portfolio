@@ -13,13 +13,11 @@ export default function Home() {
 
   useEffect(() => {
     const auth = getAuth(app);
-    const currentUser = auth.currentUser;
-
-    if (currentUser) {
-      currentUser.getIdToken().then((idToken) => {
-        // IDトークン付きでAPIリクエスト
+    // 認証状態の監視
+    const unsubscribe = auth.onAuthStateChanged(async (user) => {
+      if (user) {
+        const idToken = await user.getIdToken();
         fetch("http://localhost:3001/api/auth/me", {
-          method: "GET",
           headers: {
             Authorization: `Bearer ${idToken}`,
           },
@@ -27,8 +25,13 @@ export default function Home() {
           .then((res) => res.json())
           .then((data) => setApiResult(data))
           .catch((err) => console.error("APIエラー:", err));
-      });
-    }
+      } else {
+        setApiResult(null); // ログアウト状態ならデータクリア
+      }
+    });
+
+    // コンポーネントアンマウント時に監視解除
+    return () => unsubscribe();
   }, []);
 
   return (

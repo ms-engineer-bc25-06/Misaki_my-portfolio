@@ -1,3 +1,4 @@
+//Firebaseのメール確認（Verify Email）リンクの処理用
 "use client";
 
 import { useEffect, useState } from "react";

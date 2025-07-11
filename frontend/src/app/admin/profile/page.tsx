@@ -1,7 +1,7 @@
 // app/admin/profile/page.tsx
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { getAuth } from "firebase/auth";
 import { app } from "@/libs/firebase";
 import { notFound } from "next/navigation";
@@ -12,7 +12,7 @@ export default function AdminProfilePage() {
   const [image, setImage] = useState<File | null>(null); // プロフィール画像
 
   // 管理者チェック
-  useState(() => {
+  useEffect(() => {
     const auth = getAuth(app);
     const user = auth.currentUser;
     if (!user) return notFound();
