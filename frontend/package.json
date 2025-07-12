@@ -10,6 +10,7 @@
     "tw:init": "tailwindcss init -p"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "firebase": "^11.10.0",
     "next": "15.3.5",
     "react": "^19.0.0",

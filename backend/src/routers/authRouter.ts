@@ -1,14 +1,20 @@
 // backend/src/routers/authRouter.ts（基本情報取得）
 import express from "express";
 import { verifyFirebaseToken } from "../middleware/verifyFirebaseToken";
-import { DecodedIdToken } from "firebase-admin/auth";
+import { RequestWithUser } from "../types/express"; // 追加
 
 const router = express.Router();
 
 // このルートが `/api/auth/me` の実体です
-router.get("/me", verifyFirebaseToken, (req, res) => {
-  const user = (req as { user?: DecodedIdToken }).user!; //!は絶対にあると言い切る
-  res.json({ uid: user.uid, email: user.email, name: user.name });
+router.get("/me", verifyFirebaseToken, (req: RequestWithUser, res) => {
+  if (!req.user) {
+    res.status(401).json({ message: "ユーザー情報が見つかりません" });
+    return;
+  }
+
+  const { uid, email, name } = req.user;
+
+  res.json({ uid, email, name });
 });
 
 export default router;

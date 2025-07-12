@@ -10,4 +10,6 @@ export const isAdmin = (req: Request, res: Response, next: NextFunction) => {
   } else {
     res.status(403).json({ message: "管理者権限がありません" });
   }
+
+  next(); // adminなら次の処理へ
 };

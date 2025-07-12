@@ -1,13 +1,8 @@
-import express from "express";
+// 変更後: app.tsで設定したExpressインスタンスを読み込んで起動する
 
-const app = express();
+import app from "./app";
+
 const PORT = 3001;
-
-app.use(express.json());
-
-app.get("/", (req, res) => {
-  res.json({ message: "Hello from backend!" });
-});
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
