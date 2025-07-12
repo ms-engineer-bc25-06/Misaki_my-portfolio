@@ -14,13 +14,12 @@ my-portfolio/
 │   │   │   ├── admin/           # 管理画面（認証必要）
 │   │   │   │   ├── page.tsx
 │   │   │   │   ├── profile/page.tsx
-│   │   │   │   └── works/page.tsx
+│   │   │   │
 │   │   └── layout.tsx           # 共通レイアウト
 │   ├── libs/
 │   │   └── firebase.ts          # Firebase 初期化
-│   ├── components/
-│   │   └── LoginButton.tsx
-│   └── public/                  # ローカル画像（FirebaseStorageに移行予定）
+
+
 
 ├── backend/                     # バックエンド（Express + TypeScript）
 │   ├── src/

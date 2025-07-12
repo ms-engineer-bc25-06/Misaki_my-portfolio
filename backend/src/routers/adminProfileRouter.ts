@@ -31,15 +31,25 @@ const upload = multer({ storage });
 
 // POST /api/profile プロフィール作成・更新（画像＋bio）
 router.post(
-  "/profile",
+  "/",
   verifyFirebaseToken,
   isAdmin,
   upload.single("image"),
   async (req: AuthenticatedRequest, res: Response) => {
+    console.log("POST /api/profile にアクセスが来ました");
+    console.log("Content-Type:", req.headers["content-type"]);
+    console.log("Headers:", req.headers);
+    console.log("req.body:", req.body);
+    console.log("req.file:", req.file);
+
     try {
       const { bio } = req.body;
       const image = req.file?.filename;
       const uid = req.uid;
+
+      console.log("✅ bio:", bio);
+      console.log("✅ image:", image);
+      console.log("✅ uid:", uid);
 
       if (!bio || !image || !uid) {
         res.status(400).json({
@@ -92,7 +102,7 @@ router.post(
 
 // GET /api/profile プロフィール取得
 router.get(
-  "/profile",
+  "/",
   verifyFirebaseToken,
   async (req: AuthenticatedRequest, res: Response) => {
     try {

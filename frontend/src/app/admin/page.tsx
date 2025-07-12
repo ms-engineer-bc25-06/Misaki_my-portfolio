@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { getAuth } from "firebase/auth";
-import { app } from "@/libs/firebase";
+import { app } from "@/libs/firebase"; // 既存のfirebase初期化モジュール
 import { notFound } from "next/navigation";
 import Link from "next/link";
 
@@ -21,16 +21,23 @@ export default function AdminPage() {
     const user = auth.currentUser;
 
     if (!user) {
+      console.log("未ログイン → notFound()");
       notFound(); // ログインしてない人は 404
       return;
     }
 
     user.getIdTokenResult().then((idTokenResult) => {
       const isAdmin = idTokenResult.claims.admin === true;
+      console.log(" クレーム:", idTokenResult.claims);
       if (!isAdmin) {
+        console.log("管理者ではありません → notFound()");
         notFound(); // 管理者じゃない人も 404
       } else {
         setChecked(true); // 管理者 OK
+        //  idToken 出力（curl用など）
+        user.getIdToken().then((token) => {
+          console.log(" idToken:", token);
+        });
       }
     });
   }, []);

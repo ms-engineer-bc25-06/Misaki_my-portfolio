@@ -90,6 +90,16 @@ export default function Home() {
         </a>
       </section>
 
+      {/* 管理画面へのリンク */}
+      <section className="text-center mt-6">
+        <a
+          href="/admin/profile"
+          className="inline-block bg-green-600 text-white px-6 py-2 rounded-md hover:bg-green-700 transition"
+        >
+          管理画面へ
+        </a>
+      </section>
+
       {/* APIのテスト結果（ログイン状態確認用） */}
       {apiResult && (
         <div className="mt-12 text-sm text-gray-500">
